@@ -20,6 +20,7 @@ def create(request):
     blog.title = request.GET['title']  # 내용 채우기
     blog.body = request.GET['body'] # 내용 채우기
     blog.pub_date = timezone.datetime.now() # 내용 채우기
+    blog.writer = request.user # 내용 채우기
     blog.save() # 객체 저장하기
 
     # 새로운 글 url 주소로 이동
